@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Transit Arrivalz</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="stylesheets/fan.css">
+<link rel="stylesheet" href="js/fan.js" >
+</head>
+<body>
+	<style>
+	select.selectStyle {
+		background-color:#FF5151;
+	}
+	input.buttonstyle {
+    display: inline-block;  
+    zoom: 1; 
+    *display: inline;  
+    vertical-align: baseline;  
+    margin: 0 2px;  
+    outline: none;  
+    cursor: pointer;  
+    text-align: center;  
+    text-decoration: none;  
+    font: 14px/100% Arial, Helvetica, sans-serif;  
+    padding: .5em 2em .55em;  
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);  
+    -webkit-border-radius: .5em;   
+    -moz-border-radius: .5em;  
+    border-radius: .5em;  
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+}  
+.buttonstyle:hover {  
+    text-decoration: none;  
+}  
+.buttonstyle:active {  
+    position: relative;  
+    top: 1px;  
+}
+</style>
+	<img src ="images/3.JPG" style="width:500px;height:400px;">
+	<img src ="images/subway1.JPG" style="width:500px;height:400px;">
+	<img src ="images/subwaylogo.png">
+	<div style="border:1px solid #F60"></div>
+     <script>
+
+            var theUrl = "http://developer.trimet.org/ws/V1/arrivals?locIDs=6849,6850&appID=26905EAEEBA02217C9448D594&json=true";
+
+            $.getJSON( theUrl, function( json ) {
+               // This is where take the parts of the object.
+
+                $('#stuff').text('Query Time: ' + json.resultSet.queryTime);
+
+            });
+
+        </script>
+	<form>
+
+    <select name="Location" class="selectStyle">
+        <option value="0">Current Locations</option>
+        <option value="1">Downtown</option>
+        <option value="2">SW</option>
+        <option value="3">SE</option>
+        <option value="4">NW</option>
+        <option value="5">NE</option>
+    </select>
+        <input type="text" size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='#F0F0F0'" 
+style="width: 400; height: 21" onmouseout="this.style.borderColor='';this.style.backgroundColor='white'" style="border-width:1px;border-color=black">
+    <select name="Location" class="selectStyle">
+        <option value="0">Current Locations</option>
+        <option value="1">Downtown</option>
+        <option value="2">SW</option>
+        <option value="3">SE</option>
+        <option value="4">NW</option>
+        <option value="5">NE</option>
+    </select>
+    <input type="text" size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='#F0F0F0'" 
+style="width: 400; height: 21" onmouseout="this.style.borderColor='';this.style.backgroundColor='white'" style="border-width:1px;border-color=black">
+<input type="button"  class="buttonstyle" value="Plan Your Trip Now!!" >
+    <div style="border:1px solid #F60"></div>
+    </form>
+
+    <!--<img src ="images/cny1.jpg" style="width:200px;height:200px;">
+    <img src ="images/gxfc.gif" style="width:200px;height:200px;">
+	<img src ="images/X11sheep.gif" style="width:200px;height:200px;">
+	<img src ="images/wsry.jpg" style="width:200px;height:200px;">-->
+
+</body>
+
+</html>
